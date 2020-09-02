@@ -1,32 +1,3 @@
 {
-  "aluno-1": {
-    "nome": "Victor Niubo",
-    "email-insper": "victoran@al.insper.edu.br",
-    "user-github": "victorniubo"
-  },
-  "aluno-2": {
-    "nome": "",
-    "email-insper": "",
-    "user-github": ""
-  },
-  "aluno-3": {
-    "nome": "",
-    "email-insper": "",
-    "user-github": ""
-  },
-  "aluno-4": {
-    "nome": "Gabriel Parfan Guimarães",
-    "email-insper": "gabrielpg1@al.insper.edu.br",
-    "user-github": "GParfan"
-  },
-  "aluno-5": {
-    "nome": "",
-    "email-insper": "",
-    "user-github": ""
-  },
-  "aluno-6": {
-    "nome": "",
-    "email-insper": "",
-    "user-github": ""
-  }
+  "Nome-Grupo": "Casa"
 }
