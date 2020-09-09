@@ -20,12 +20,12 @@ sys.path.insert(0, str(Path.home()) + '/Z01-Tools/scripts/')
 
 from config import *
 
-class tstLogiComb(object):
 
+class tstLogiComb(object):
     def __init__(self):
         self.pwd = os.path.dirname(os.path.abspath(__file__))
-        self.rtl = os.path.join(self.pwd,'src/rtl/')
-        self.tst = os.path.join(self.pwd,'tests/')
+        self.rtl = os.path.join(self.pwd,'src/')
+        self.tst = os.path.join(self.pwd,'')
         self.log = os.path.join(TOOL_PATH,'log','logB.xml')
         self.work = vhdlScript(self.log)
 
@@ -43,11 +43,9 @@ class tstLogiComb(object):
     def head(self):
         logLogiComb("---------- Logica-Combinacional   ")
 
+
 if __name__ == "__main__":
-
-    # inicializa notificacao
     noti = notificacao('Teste projeto B')
-
     tstLogiComb = tstLogiComb()
     tstLogiComb.add(tstLogiComb.work)
     if tstLogiComb.work.run() is -1:
@@ -57,13 +55,8 @@ if __name__ == "__main__":
     print("===================================================")
     r = report(tstLogiComb.log, 'B', 'HW')
 
-    # notificacao / log do teste
-    noti.hw(r)
-
     print("Reporting test result to server")
+    noti.hw(r)
     r.send()
     sys.exit(r.error)
     print("===================================================")
-
-
-
