@@ -14,13 +14,6 @@ end entity;
 architecture rtl of DMux4Way is
 begin
 
-q0 <= not sel(0) and not sel(1) and a;
-
-q1 <= sel(0) and not sel(1) and a;
-
-q2 <= not sel(0) and sel(1) and a;
-
-q3 <= sel(0) and sel(1) and  a;
 
 end architecture;
 
