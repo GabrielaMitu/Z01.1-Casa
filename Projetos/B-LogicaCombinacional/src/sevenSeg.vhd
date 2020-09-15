@@ -27,5 +27,6 @@ begin
 	else "0110000" when ( bcd = "1110" ) -- E
 	else "0111000" when ( bcd = "1111" ) -- F
 	else "1000000";
+	
 
 end architecture;
