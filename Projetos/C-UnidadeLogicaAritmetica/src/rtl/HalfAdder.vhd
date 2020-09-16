@@ -21,5 +21,7 @@ architecture rtl of HalfAdder is
 
 begin
   -- Implementação vem aqui!
+  u1 : HalfAdder port map(a => SW(0), b=> SW(1), soma => LEDR(0), vaium => LEDR(1));
+
 
 end architecture;
