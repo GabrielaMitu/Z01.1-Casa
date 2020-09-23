@@ -51,6 +51,18 @@ begin
     wait until clk'event and clk='1';
     assert(y = x"FFFF") report "a=0000, z=1, y=ffff";
 
+    wait until clk'event and clk='1';
+    a <= x"FFFF";
+    z <= '0';
+    wait until clk'event and clk='1';
+    assert(y = x"FFFF") report "a=ffff, z=0, y=ffff";
+
+    wait until clk'event and clk='1';
+    a <= x"FFFF";
+    z <= '1';
+    wait until clk'event and clk='1';
+    assert(y = x"0000") report "a=ffff, z=1, y=0000";
+
     test_runner_cleanup(runner); -- Simulacao acaba aqui
   end process;
 end architecture;
