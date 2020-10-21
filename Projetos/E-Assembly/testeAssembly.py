@@ -74,7 +74,7 @@ if __name__ == "__main__":
 
     pwd = os.path.dirname(os.path.abspath(__file__))
     if args["testDir"] is None:
-        testDir = pwd+"/tests/"
+        testDir = pwd + '/'
     else:
         testDir = args["testDir"]
 
