@@ -9,8 +9,8 @@
 ; 11111 0000 496
 
 leaw $21185, %A 
-movw (%A), %D    
-leaw $R0, %A
+; movw (%A), %D    
+; leaw $R0, %A
 movw (%A), %D    
 leaw $14, %A
 notw %D 
