@@ -19,3 +19,87 @@
 ; RAM[7]:  1  | RAM[7]:  1 |
 ; RAM[8]:  4  | RAM[8]:  4 -
 ; ------------------------------------
+
+
+leaw $4, %A
+addw %A, %D, %D
+addw (%A), %D, %D
+leaw $2, %A
+movw %D, (%A)
+movw %D, %A
+movw (%A), %D
+leaw $1, %A
+movw %D, (%A)
+
+LOOP:
+leaw $2, %A
+movw (%A), %D
+decw %D
+movw %D, (%A)
+leaw $4, %A
+subw %D, (%A), %D
+leaw $ENDSUM
+je %D
+nop
+
+leaw $2, %A
+movw (%A), %D
+movw %D, %A
+movw (%A), %D
+leaw $1, %A
+addw %D, (%A), %D
+movw %D, (%A)
+leaw $1337, %A
+movw %D, (%A)
+leaw $LOOP, %A
+jmp
+nop
+
+ENDSUM:
+leaw $1, %A
+movw (%A), %D
+leaw $4, %A
+subw %D, (%A), %D
+leaw $1, %A
+movw %D, (%A)
+leaw $3, %A
+movw (%A), %D
+incw %D
+movw %D, (%A)
+leaw $1, %A
+movw (%A), %D
+leaw $ELSE, %A
+jle %D
+nop
+leaw $ENDSUM, %A
+jmp
+nop
+
+ELSE:
+leaw $ELSE2, %A
+je %D
+nop
+leaw $3, %A
+movw (%A), %D
+leaw $4, %A
+subw %D, %A, %D
+leaw $0, %A
+movw %D, (%A)
+leaw $END, %A
+jmp
+nop
+
+ELSE2:
+leaw $3, %A
+movw (%A), %D
+leaw $0, %A
+movw %D, (%A)
+leaw $END, %A
+jmp
+nop
+
+END:
+leaw $1337, %A
+movw (%A), %D
+leaw $1, %A
+movw %D, (%A)
