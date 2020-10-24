@@ -9,7 +9,38 @@
 
 
 
+leaw $2, %A
+movw $0, (%A)
 
+leaw $0, %A
+movw (%A), %D ; D = RAM[0]
+
+leaw $3, %A
+movw %D, (%A) ; RAM[3] = RAM[0]
+
+WHILE:
+leaw $3, %A
+movw (%A), %D
+
+leaw $1, %A
+subw %D, (%A), %D ; RAM[3] - RAM[1]
+leaw $3, %A
+movw %D, (%A)
+
+leaw $END, %A
+jl
+nop
+
+leaw $2, %A
+movw (%A), %D
+incw %D
+movw %D, (%A) ; RAM[2] += 1
+
+leaw $WHILE, %A
+jmp
+nop
+
+END:
 
 
 
