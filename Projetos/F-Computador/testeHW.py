@@ -16,7 +16,7 @@ class tstHW(object):
     def __init__(self):
         self.pwd = os.path.dirname(os.path.abspath(__file__))
         self.rtl = os.path.join(self.pwd, 'src/rtl/')
-        self.tst = os.path.join(self.pwd, 'tests/')
+        self.tst = os.path.join(self.pwd,'')
         self.log = os.path.join(TOOL_PATH,'log','logF.xml')
         self.work = vhdlScript(self.log)
 
@@ -27,7 +27,7 @@ class tstHW(object):
 
     def addTst(self, work):
         if work.addTstConfigFile(self.tst) is False:
-            sys.exit(1)
+            sys.exit(-1)
 
     def add(self, work):
         self.addSrc(work)
@@ -49,7 +49,7 @@ if __name__ == "__main__":
     tstLogiComb.addSrc(tstCpu.work)
     tstSeq.addSrc(tstCpu.work)
     tstCpu.add(tstCpu.work)
-    if tstCpu.work.run() is -1:
+    if tstCpu.work.run() < 0:
         noti.error('\n Erro de compilação VHDL')
         sys.exit(-1)
 

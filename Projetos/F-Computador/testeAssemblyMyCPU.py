@@ -81,7 +81,7 @@ if __name__ == "__main__":
     else:
         gui = False
 
-    testDir = PROJ_E_PATH+"/tests/"
+    testDir = PROJ_E_PATH+"/"
     nasm = [PROJ_E_PATH+"/src/", PROJ_E_PATH+"/src/examples/"]
     hack = PROJ_F_PATH+"/bin/hack/"
 
