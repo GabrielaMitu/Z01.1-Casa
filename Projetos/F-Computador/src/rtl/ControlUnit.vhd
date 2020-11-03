@@ -29,7 +29,7 @@ end entity;
 architecture arch of ControlUnit is
 
 begin
-  
+
   loadD <= instruction(17) and instruction(4);
   loadM <= instruction(17) and instruction(5);
   loadA <= not(instruction(17));
@@ -50,6 +50,5 @@ begin
   else '1' when (instruction(1) = '1' and instruction(2) = '1') and (zr = '1' or  ng = '1')
   else '1' when instruction(0) = '1' and instruction(1) = '1' and instruction(2) = '1'
   else '0';
-
 
 end architecture;
