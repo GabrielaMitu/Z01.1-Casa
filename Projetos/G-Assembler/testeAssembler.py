@@ -74,7 +74,7 @@ if __name__ == "__main__":
 
     pwd = os.path.dirname(os.path.abspath(__file__))
     if args["testDir"] is None:
-        testDir = pwd+"/../E-Assembly/tests/"
+        testDir = pwd+"/../E-Assembly/"
     else:
         testDir = args["testDir"]
 
@@ -88,7 +88,7 @@ if __name__ == "__main__":
     else:
         gui = False
 
-    nasm = [pwd+"/../E-Assembly/src/", pwd+"/../E-Assembly/src/nasm/examples/"]
+    nasm = [pwd+"/../E-Assembly/src/", pwd+"/../E-Assembly/src/examples/"]
     hack = pwd+"/bin/hack/"
 
     # gera jar
