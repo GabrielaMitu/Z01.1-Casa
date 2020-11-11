@@ -109,7 +109,6 @@ public class Parser {
         String[] vetor = command.split(" ");
         //System.out.println(vetor[2]);
         return vetor[2];
-
     }
 
     /**
