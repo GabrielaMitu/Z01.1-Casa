@@ -1,11 +1,3 @@
-/**
- * Curso: Elementos de Sistemas
- * Arquivo: Assemble.java
- * Created by Luciano <lpsoares@insper.edu.br>
- * Date: 04/02/2017
- *
- * 2018 @ Rafael Corsi
- */
 
 package assembler;
 
