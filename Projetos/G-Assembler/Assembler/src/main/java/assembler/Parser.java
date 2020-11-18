@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Vector;
 
 /**
  * Encapsula o código de leitura. Carrega as instruções na linguagem assembly,
@@ -88,8 +89,13 @@ public class Parser {
      * @return o tipo da instrução.
      */
     public CommandType commandType(String command) {
-        /* TODO: implementar */
-    	return null;
+        if(command.contains("leaw")){
+            return CommandType.A_COMMAND;
+        }else if(command.contains(":")){
+            return CommandType.L_COMMAND;
+        }else {
+            return CommandType.C_COMMAND;
+        }
     }
 
     /**
@@ -99,8 +105,12 @@ public class Parser {
      * @return somente o símbolo ou o valor número da instrução.
      */
     public String symbol(String command) {
-        /* TODO: implementar */
-    	return null;
+        command=command.replace(",", " ");
+        command=command.replace("$", " ");
+        String[] vetor = command.split(" ");
+        //System.out.println(vetor[2]);
+        return vetor[2];
+
     }
 
     /**
@@ -110,19 +120,46 @@ public class Parser {
      * @return o símbolo da instrução (sem os dois pontos).
      */
     public String label(String command) {
-        /* TODO: implementar */
-    	return null;
+        boolean numeric = true;
+        String commandX = "X";
+
+        if (command.contains(":")) {
+            command = command.replace(":", "");
+        } else if (command.contains("$")) {
+            commandX = command.replace("$", "");
+            System.out.println(commandX);
+            try {
+                Double num = Double.parseDouble(command);
+            } catch (NumberFormatException e) {
+                numeric = false;
+            }
+            if (!(numeric)) {
+                command = commandX;
+
+            }}
+        System.out.println(commandX);
+
+        return command;
     }
 
-    /**
-     * Separa os mnemônicos da instrução fornecida em tokens em um vetor de Strings.
-     * Deve ser chamado somente quando CommandType () é C_COMMAND.
-     * @param  command instrução a ser analisada.
-     * @return um vetor de string contento os tokens da instrução (as partes do comando).
-     */
     public String[] instruction(String command) {
         /* TODO: implementar */
-    	return null;
+        try {
+            command = command.replace("  ", " ");
+            command = command.replace("   ", " ");
+            command = command.replace("    ", " ");
+            command = command.replace("     ", " ");
+            command = command.replace(" ", ";");
+            command = command.replace(",", ";");
+            command = command.replace(";;", ";");
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        String[] instruction = command.split(";");
+
+        return instruction;
     }
 
 
