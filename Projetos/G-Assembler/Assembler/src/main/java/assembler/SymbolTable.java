@@ -47,7 +47,6 @@ public class SymbolTable {
      */
     public Integer getAddress(String symbol) {
         return symbolTable.get(symbol);
-
     }
 
     /**
